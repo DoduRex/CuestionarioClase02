@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,7 +12,7 @@
             box-sizing: border-box;
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
-        
+
         body {
             background-color: #f5f5f5;
             color: #333;
@@ -19,9 +20,10 @@
             min-height: 100vh;
             display: flex;
             flex-direction: column;
-            align-items: center; /* Centra todo el contenido horizontalmente */
+            align-items: center;
+            /* Centra todo el contenido horizontalmente */
         }
-        
+
         /* Contenedor principal que centra todo */
         .page-wrapper {
             width: 100%;
@@ -29,34 +31,34 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         .container {
             max-width: 1200px;
             width: 100%;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         /* Encabezado */
         header {
             background-color: #1a3c6e;
             color: white;
             padding: 20px 0;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             width: 100%;
         }
-        
+
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-        
+
         .logo {
             display: flex;
             align-items: center;
         }
-        
+
         .logo-img {
             width: 80px;
             height: 80px;
@@ -69,44 +71,44 @@
             border: 3px solid #ffcc00;
             overflow: hidden;
         }
-        
+
         .logo-img img {
             width: 100%;
             height: 100%;
             object-fit: contain;
         }
-        
+
         .logo-text {
             font-size: 24px;
             font-weight: bold;
         }
-        
+
         .instituto-nombre {
             font-size: 16px;
             font-weight: normal;
             margin-top: 5px;
         }
-        
+
         nav ul {
             display: flex;
             list-style: none;
         }
-        
+
         nav ul li {
             margin-left: 20px;
         }
-        
+
         nav ul li a {
             color: white;
             text-decoration: none;
             font-weight: 500;
             transition: color 0.3s;
         }
-        
+
         nav ul li a:hover {
             color: #ffcc00;
         }
-        
+
         /* Banner Principal */
         .hero {
             background: linear-gradient(rgba(26, 60, 110, 0.8), rgba(26, 60, 110, 0.9));
@@ -117,25 +119,25 @@
             text-align: center;
             width: 100%;
         }
-        
+
         .hero-content {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
         }
-        
+
         .hero h1 {
             font-size: 2.8rem;
             margin-bottom: 20px;
             font-weight: 700;
         }
-        
+
         .hero p {
             font-size: 1.3rem;
             max-width: 700px;
             margin: 0 auto 30px;
         }
-        
+
         .btn {
             display: inline-block;
             background-color: #ffcc00;
@@ -148,23 +150,23 @@
             transition: all 0.3s;
             margin: 0 10px;
         }
-        
+
         .btn:hover {
             background-color: #e6b800;
             transform: translateY(-2px);
         }
-        
+
         .btn-secondary {
             background-color: transparent;
             color: white;
             border: 2px solid white;
         }
-        
+
         .btn-secondary:hover {
             background-color: white;
             color: #1a3c6e;
         }
-        
+
         /* Secciones Principales - CENTRADO CORREGIDO */
         .main-content {
             margin: 30px 0;
@@ -174,29 +176,30 @@
             flex-direction: column;
             align-items: center;
         }
-        
+
         .main-content .container {
             display: flex;
             flex-direction: column;
             align-items: center;
         }
-        
+
         .section {
             background-color: white;
             border-radius: 10px;
             padding: 25px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
-            width: 100%; /* Asegura que ocupe todo el ancho disponible */
+            width: 100%;
+            /* Asegura que ocupe todo el ancho disponible */
         }
-        
+
         .section h2 {
             color: #1a3c6e;
             margin-bottom: 20px;
             padding-bottom: 10px;
             border-bottom: 2px solid #ffcc00;
         }
-        
+
         /* Tarjetas de Servicios */
         .services-grid {
             display: grid;
@@ -205,7 +208,7 @@
             margin-top: 20px;
             width: 100%;
         }
-        
+
         .service-card {
             background-color: #f9f9f9;
             border-radius: 8px;
@@ -213,23 +216,23 @@
             transition: all 0.3s;
             border-left: 4px solid #1a3c6e;
         }
-        
+
         .service-card:hover {
             transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
         }
-        
+
         .service-icon {
             font-size: 40px;
             margin-bottom: 15px;
             color: #1a3c6e;
         }
-        
+
         .service-card h3 {
             margin-bottom: 15px;
             color: #1a3c6e;
         }
-        
+
         /* Información del Estudiante */
         .student-info {
             display: grid;
@@ -238,7 +241,7 @@
             margin-top: 20px;
             width: 100%;
         }
-        
+
         .info-card {
             background-color: #f0f4f8;
             border-radius: 8px;
@@ -246,25 +249,25 @@
             text-align: center;
             border-top: 4px solid #ffcc00;
         }
-        
+
         .info-number {
             font-size: 2.2rem;
             font-weight: bold;
             color: #1a3c6e;
             margin-bottom: 10px;
         }
-        
+
         .info-label {
             color: #555;
             font-size: 1rem;
         }
-        
+
         /* Noticias y Anuncios */
         .news-list {
             list-style: none;
             width: 100%;
         }
-        
+
         .news-item {
             padding: 20px;
             border: 1px solid #eee;
@@ -272,51 +275,52 @@
             margin-bottom: 15px;
             transition: all 0.3s;
         }
-        
+
         .news-item:hover {
-            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
         }
-        
+
         .news-date {
             color: #ffcc00;
             font-weight: bold;
             margin-bottom: 10px;
             display: block;
         }
-        
+
         .news-item h3 {
             margin-bottom: 10px;
             color: #1a3c6e;
         }
-        
+
         /* Calificaciones Recientes */
         .grades-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
         }
-        
-        .grades-table th, .grades-table td {
+
+        .grades-table th,
+        .grades-table td {
             padding: 12px 15px;
             text-align: left;
             border-bottom: 1px solid #eee;
         }
-        
+
         .grades-table th {
             background-color: #f0f4f8;
             color: #1a3c6e;
             font-weight: 600;
         }
-        
+
         .grades-table tr:hover {
             background-color: #f9f9f9;
         }
-        
+
         .grade-value {
             font-weight: bold;
             color: #1a3c6e;
         }
-        
+
         /* Pie de página - CENTRADO CORREGIDO */
         footer {
             background-color: #1a3c6e;
@@ -327,111 +331,113 @@
             display: flex;
             justify-content: center;
         }
-        
+
         .footer-content {
             display: flex;
             justify-content: space-between;
             width: 100%;
         }
-        
+
         .footer-section {
             flex: 1;
             margin-right: 30px;
         }
-        
+
         .footer-section h3 {
             margin-bottom: 15px;
             color: #ffcc00;
         }
-        
-        .footer-section p, .footer-section a {
+
+        .footer-section p,
+        .footer-section a {
             color: #ddd;
             margin-bottom: 10px;
             display: block;
             text-decoration: none;
         }
-        
+
         .footer-section a:hover {
             color: white;
         }
-        
+
         .copyright {
             text-align: center;
             margin-top: 30px;
             padding-top: 20px;
-            border-top: 1px solid rgba(255,255,255,0.1);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #aaa;
             width: 100%;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             nav ul {
                 margin-top: 15px;
                 justify-content: center;
                 flex-wrap: wrap;
             }
-            
+
             nav ul li {
                 margin: 5px 10px;
             }
-            
+
             .hero h1 {
                 font-size: 2.2rem;
             }
-            
+
             .hero p {
                 font-size: 1.1rem;
             }
-            
+
             .btn {
                 display: block;
                 margin: 10px auto;
                 max-width: 250px;
             }
-            
+
             .footer-content {
                 flex-direction: column;
             }
-            
+
             .footer-section {
                 margin-right: 0;
                 margin-bottom: 20px;
             }
-            
+
             .services-grid {
                 grid-template-columns: 1fr;
             }
-            
+
             .student-info {
                 grid-template-columns: repeat(2, 1fr);
             }
         }
-        
+
         @media (max-width: 480px) {
             .student-info {
                 grid-template-columns: 1fr;
             }
-            
+
             .logo-text {
                 font-size: 20px;
             }
-            
+
             .instituto-nombre {
                 font-size: 14px;
             }
-            
+
             .hero h1 {
                 font-size: 1.8rem;
             }
         }
     </style>
 </head>
+
 <body>
     <div class="page-wrapper">
         <!-- Encabezado -->
@@ -477,20 +483,25 @@
                         <div class="service-card">
                             <div class="service-icon">👨‍🎓</div>
                             <h3>Perfil Estudiantil</h3>
-                            <p>Consulta y actualiza tu información personal, datos de contacto y situación académica actual.</p>
-                            <a href="Pagina_Perfil/perfil.html" class="btn" style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Acceder</a>
+                            <p>Consulta y actualiza tu información personal, datos de contacto y situación académica
+                                actual.</p>
+                            <a href="Pagina_Perfil/perfil.html" class="btn"
+                                style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Acceder</a>
                         </div>
                         <div class="service-card">
                             <div class="service-icon">📚</div>
                             <h3>Tareas Académicas</h3>
-                            <p>Envía tus trabajos mediante enlaces y revisa las tareas ya entregadas con vista previa integrada.</p>
-                            <a href="Pagina_Tareas_Academicas/index.html" class="btn" style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Entregar Tarea</a>
+                            <p>Envía tus trabajos mediante enlaces y revisa las tareas ya entregadas con vista previa
+                                integrada.</p>
+                            <a href="Pagina_Tareas_Academicas/index.html" class="btn"
+                                style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Entregar Tarea</a>
                         </div>
                         <div class="service-card">
                             <div class="service-icon">📊</div>
                             <h3>Calificaciones</h3>
                             <p>Revisa tus calificaciones, promedios y progreso académico en todas las materias.</p>
-                            <a href="academico.html" class="btn" style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Consultar</a>
+                            <a href="academico.html" class="btn"
+                                style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Consultar</a>
                         </div>
                     </div>
                 </div>
@@ -525,7 +536,8 @@
                         <li class="news-item">
                             <span class="news-date">15 de Octubre, 2023</span>
                             <h3>Convocatoria para becas académicas 2024</h3>
-                            <p>El instituto abre la convocatoria para solicitar becas de excelencia académica para el próximo ciclo escolar.</p>
+                            <p>El instituto abre la convocatoria para solicitar becas de excelencia académica para el
+                                próximo ciclo escolar.</p>
                         </li>
                         <li class="news-item">
                             <span class="news-date">10 de Octubre, 2023</span>
@@ -535,7 +547,8 @@
                         <li class="news-item">
                             <span class="news-date">5 de Octubre, 2023</span>
                             <h3>Taller de preparación para exámenes finales</h3>
-                            <p>El departamento de psicología educativa ofrece talleres de técnicas de estudio y manejo de estrés.</p>
+                            <p>El departamento de psicología educativa ofrece talleres de técnicas de estudio y manejo
+                                de estrés.</p>
                         </li>
                     </ul>
                 </div>
@@ -589,7 +602,8 @@
                 <div class="footer-content">
                     <div class="footer-section">
                         <h3>Instituto Superior Tecnológico Villa Maria</h3>
-                        <p>Formando profesionales de excelencia. Comprometidos con la educación de calidad y el desarrollo integral de nuestros estudiantes.</p>
+                        <p>Formando profesionales de excelencia. Comprometidos con la educación de calidad y el
+                            desarrollo integral de nuestros estudiantes.</p>
                     </div>
                     <div class="footer-section">
                         <h3>Contacto</h3>
@@ -623,7 +637,7 @@
         };
 
         // Actualizar la información del estudiante
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             // Actualizar los valores en la página
             const infoCards = document.querySelectorAll('.info-card');
             if (infoCards.length >= 4) {
@@ -632,9 +646,10 @@
                 infoCards[2].querySelector('.info-number').textContent = studentData.approvedSubjects;
                 infoCards[3].querySelector('.info-number').textContent = studentData.pendingAssignments;
             }
-            
+
             console.log('Portal Estudiantil cargado correctamente');
         });
     </script>
 </body>
+
 </html>
