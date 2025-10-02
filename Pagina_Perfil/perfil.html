@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../encabezado.css">
+    <link rel="stylesheet" href="../pie_pagina.css">
+    <link rel="stylesheet" href="perfil.css">
+    <title>Perfil Estudiantil - Instituto Tecnológico</title>
+    <style>
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+            }
+
+            .main-content {
+                flex-direction: column;
+            }
+
+            .footer-content {
+                flex-direction: column;
+            }
+
+            .footer-section {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Encabezado -->
+    <header>
+        <div class="container header-content">
+            <div class="logo">
+                <img src="../image/imagen_trans.png" alt="Logo Instituto" class="logo-img">
+                <div>
+                    <div class="logo-text">Instituto Superior Tecnológico Villa Maria</div>
+                    <div class="instituto-nombre">"Formando líderes del mañana"</div>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="../credencial.html">Inicio</a></li>
+                    <li><a href="#" style="color: #ffcc00;">Perfil</a></li>
+                    <li><a href="../Pagina_Tareas_Academicas/index.html">Tareas Académicas</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Contenido Principal -->
+    <div class="container main-content">
+        <!-- Barra lateral del perfil -->
+        <aside class="profile-sidebar">
+                <img src="../image/foto.png" alt="Mi Foto" class="profile-pic">
+            <h1 class="student-name">Ernesto Rengifo Barzola</h1>
+            <p class="student-id">ID: 2023001234</p>
+
+            <div class="contact-info">
+                <h3>Información de Contacto</h3>
+                <p><i>📧</i> ernesto.rengifo.ci@iestpvillamaria.edu.pe</p>
+                <p><i>📱</i> +51 999 119 726</p>
+                <p><i>📍</i> Lima, Perú</p>
+                <p><i>📅</i> Fecha de ingreso: Agosto 2022</p>
+            </div>
+        </aside>
+
+        <!-- Contenido del perfil -->
+        <main class="profile-content">
+            <section class="section">
+                <h2>Información Personal</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Nombre completo:</span>
+                        <div>Ernesto Rengifo Barzola</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Fecha de nacimiento:</span>
+                        <div>15 de marzo de 2005</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Género:</span>
+                        <div>Masculino</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Nacionalidad:</span>
+                        <div>Peruana</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Dirección:</span>
+                        <div>Jiron Union 15809</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Teléfono de emergencia:</span>
+                        <div>+51 999 119 726</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Información Académica</h2>
+                <div class="info-grid">
+                    <div class="info-item">
+                        <span class="info-label">Carrera:</span>
+                        <div>Ingeniería en SSoftware</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Semestre:</span>
+                        <div>6° Semestre</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Promedio general:</span>
+                        <div>9.2</div>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Estado:</span>
+                        <div>Activo</div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Progreso Académico</h2>
+                <div class="info-item">
+                    <span class="info-label">Créditos aprobados:</span>
+                    <div>120 / 240</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%"></div>
+                    </div>
+                </div>
+                <div class="info-item">
+                    <span class="info-label">Asignaturas aprobadas:</span>
+                    <div>24 / 48</div>
+                    <div class="progress-bar">
+                        <div class="progress" style="width: 50%"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>Calificaciones del Semestre Actual</h2>
+                <ul class="courses-list">
+                    <li>Programación Orientada a Objetos <span class="course-grade">9.5</span></li>
+                    <li>Base de Datos <span class="course-grade">9.0</span></li>
+                    <li>Estructuras de Datos <span class="course-grade">8.8</span></li>
+                    <li>Matemáticas Discretas <span class="course-grade">9.2</span></li>
+                    <li>Inglés Técnico <span class="course-grade">9.7</span></li>
+                </ul>
+            </section>
+        </main>
+    </div>
+
+    <!-- Pie de página -->
+    <footer>
+        <div class="container footer-content">
+            <div class="footer-section">
+                <h3>Instituto Tecnológico</h3>
+                <p>Formando profesionales de excelencia desde 1985.</p>
+                <p>Comprometidos con la educación de calidad.</p>
+            </div>
+            <div class="footer-section">
+                <h3>Contacto</h3>
+                <p>📍 Av. Universidad #123, Ciudad</p>
+                <p>📞 +1 (555) 123-4567</p>
+                <p>📧 info@instituto.edu</p>
+            </div>
+            <div class="footer-section">
+                <h3>Enlaces Rápidos</h3>
+                <a href="#">Portal Estudiantil</a>
+                <a href="#">Biblioteca Virtual</a>
+                <a href="#">Calendario Académico</a>
+                <a href="#">Bolsa de Trabajo</a>
+            </div>
+        </div>
+        <div class="container copyright">
+            <p>&copy; 2023 Instituto Tecnológico. Todos los derechos reservados.</p>
+        </div>
+    </footer>
+</body>
+
+</html>

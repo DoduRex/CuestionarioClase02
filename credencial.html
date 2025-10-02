@@ -1,0 +1,640 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portal Estudiantil - Instituto Superior Tecnológico Villa Maria</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center; /* Centra todo el contenido horizontalmente */
+        }
+        
+        /* Contenedor principal que centra todo */
+        .page-wrapper {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Encabezado */
+        header {
+            background-color: #1a3c6e;
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            width: 100%;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo-img {
+            width: 80px;
+            height: 80px;
+            background-color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            border: 3px solid #ffcc00;
+            overflow: hidden;
+        }
+        
+        .logo-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+        
+        .logo-text {
+            font-size: 24px;
+            font-weight: bold;
+        }
+        
+        .instituto-nombre {
+            font-size: 16px;
+            font-weight: normal;
+            margin-top: 5px;
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav ul li {
+            margin-left: 20px;
+        }
+        
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+        
+        nav ul li a:hover {
+            color: #ffcc00;
+        }
+        
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(26, 60, 110, 0.8), rgba(26, 60, 110, 0.9));
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 100px 0;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hero-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .hero h1 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .hero p {
+            font-size: 1.3rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #1a3c6e;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            margin: 0 10px;
+        }
+        
+        .btn:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: white;
+            color: #1a3c6e;
+        }
+        
+        /* Secciones Principales - CENTRADO CORREGIDO */
+        .main-content {
+            margin: 30px 0;
+            flex: 1;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .main-content .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .section {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+            width: 100%; /* Asegura que ocupe todo el ancho disponible */
+        }
+        
+        .section h2 {
+            color: #1a3c6e;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ffcc00;
+        }
+        
+        /* Tarjetas de Servicios */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .service-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            padding: 25px;
+            transition: all 0.3s;
+            border-left: 4px solid #1a3c6e;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+            color: #1a3c6e;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: #1a3c6e;
+        }
+        
+        /* Información del Estudiante */
+        .student-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+            width: 100%;
+        }
+        
+        .info-card {
+            background-color: #f0f4f8;
+            border-radius: 8px;
+            padding: 20px;
+            text-align: center;
+            border-top: 4px solid #ffcc00;
+        }
+        
+        .info-number {
+            font-size: 2.2rem;
+            font-weight: bold;
+            color: #1a3c6e;
+            margin-bottom: 10px;
+        }
+        
+        .info-label {
+            color: #555;
+            font-size: 1rem;
+        }
+        
+        /* Noticias y Anuncios */
+        .news-list {
+            list-style: none;
+            width: 100%;
+        }
+        
+        .news-item {
+            padding: 20px;
+            border: 1px solid #eee;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            transition: all 0.3s;
+        }
+        
+        .news-item:hover {
+            box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+        }
+        
+        .news-date {
+            color: #ffcc00;
+            font-weight: bold;
+            margin-bottom: 10px;
+            display: block;
+        }
+        
+        .news-item h3 {
+            margin-bottom: 10px;
+            color: #1a3c6e;
+        }
+        
+        /* Calificaciones Recientes */
+        .grades-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .grades-table th, .grades-table td {
+            padding: 12px 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .grades-table th {
+            background-color: #f0f4f8;
+            color: #1a3c6e;
+            font-weight: 600;
+        }
+        
+        .grades-table tr:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .grade-value {
+            font-weight: bold;
+            color: #1a3c6e;
+        }
+        
+        /* Pie de página - CENTRADO CORREGIDO */
+        footer {
+            background-color: #1a3c6e;
+            color: white;
+            padding: 30px 0;
+            margin-top: auto;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+        }
+        
+        .footer-section {
+            flex: 1;
+            margin-right: 30px;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            color: #ffcc00;
+        }
+        
+        .footer-section p, .footer-section a {
+            color: #ddd;
+            margin-bottom: 10px;
+            display: block;
+            text-decoration: none;
+        }
+        
+        .footer-section a:hover {
+            color: white;
+        }
+        
+        .copyright {
+            text-align: center;
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255,255,255,0.1);
+            color: #aaa;
+            width: 100%;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 15px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+            
+            nav ul li {
+                margin: 5px 10px;
+            }
+            
+            .hero h1 {
+                font-size: 2.2rem;
+            }
+            
+            .hero p {
+                font-size: 1.1rem;
+            }
+            
+            .btn {
+                display: block;
+                margin: 10px auto;
+                max-width: 250px;
+            }
+            
+            .footer-content {
+                flex-direction: column;
+            }
+            
+            .footer-section {
+                margin-right: 0;
+                margin-bottom: 20px;
+            }
+            
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .student-info {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .student-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .logo-text {
+                font-size: 20px;
+            }
+            
+            .instituto-nombre {
+                font-size: 14px;
+            }
+            
+            .hero h1 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="page-wrapper">
+        <!-- Encabezado -->
+        <header>
+            <div class="container header-content">
+                <div class="logo">
+                    <img src="image/imagen_trans.png" alt="Logo" class="logo-img">
+                    <div>
+                        <div class="logo-text">Instituto Superior Tecnológico Villa Maria</div>
+                        <div class="instituto-nombre">"Formando líderes del mañana"</div>
+                    </div>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="credencial.html" style="color: #ffcc00;">Inicio</a></li>
+                        <li><a href="Pagina_Perfil/perfil.html">Perfil</a></li>
+                        <li><a href="Pagina_Tareas_Academicas/index.html">Tareas Academicas</a></li>
+                        <li><a href="#">Contacto</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Banner Principal -->
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenido al Portal Estudiantil</h1>
+                <p>Gestiona tu formación académica, entega tareas y mantente informado sobre tu progreso educativo</p>
+                <div>
+                    <a href="../Pagina_Perfil/perfil.html" class="btn">Ver Mi Perfil</a>
+                    <a href="../Pagina_Tareas/tareas.html" class="btn btn-secondary">Entregar Tareas</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contenido Principal -->
+        <div class="main-content">
+            <div class="container">
+                <!-- Servicios Principales -->
+                <div class="section">
+                    <h2>Servicios del Portal</h2>
+                    <div class="services-grid">
+                        <div class="service-card">
+                            <div class="service-icon">👨‍🎓</div>
+                            <h3>Perfil Estudiantil</h3>
+                            <p>Consulta y actualiza tu información personal, datos de contacto y situación académica actual.</p>
+                            <a href="Pagina_Perfil/perfil.html" class="btn" style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Acceder</a>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">📚</div>
+                            <h3>Tareas Académicas</h3>
+                            <p>Envía tus trabajos mediante enlaces y revisa las tareas ya entregadas con vista previa integrada.</p>
+                            <a href="Pagina_Tareas_Academicas/index.html" class="btn" style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Entregar Tarea</a>
+                        </div>
+                        <div class="service-card">
+                            <div class="service-icon">📊</div>
+                            <h3>Calificaciones</h3>
+                            <p>Revisa tus calificaciones, promedios y progreso académico en todas las materias.</p>
+                            <a href="academico.html" class="btn" style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Consultar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información del Estudiante -->
+                <div class="section">
+                    <h2>Mi Información Académica</h2>
+                    <div class="student-info">
+                        <div class="info-card">
+                            <div class="info-number">6°</div>
+                            <div class="info-label">Semestre Actual</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-number">9.2</div>
+                            <div class="info-label">Promedio General</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-number">24/48</div>
+                            <div class="info-label">Materias Aprobadas</div>
+                        </div>
+                        <div class="info-card">
+                            <div class="info-number">4</div>
+                            <div class="info-label">Tareas Pendientes</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Noticias y Anuncios -->
+                <div class="section">
+                    <h2>Noticias y Anuncios</h2>
+                    <ul class="news-list">
+                        <li class="news-item">
+                            <span class="news-date">15 de Octubre, 2023</span>
+                            <h3>Convocatoria para becas académicas 2024</h3>
+                            <p>El instituto abre la convocatoria para solicitar becas de excelencia académica para el próximo ciclo escolar.</p>
+                        </li>
+                        <li class="news-item">
+                            <span class="news-date">10 de Octubre, 2023</span>
+                            <h3>Inauguración del nuevo laboratorio de robótica</h3>
+                            <p>Contamos con nuevo equipamiento de última generación para las carreras de ingeniería.</p>
+                        </li>
+                        <li class="news-item">
+                            <span class="news-date">5 de Octubre, 2023</span>
+                            <h3>Taller de preparación para exámenes finales</h3>
+                            <p>El departamento de psicología educativa ofrece talleres de técnicas de estudio y manejo de estrés.</p>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Calificaciones Recientes -->
+                <div class="section">
+                    <h2>Calificaciones Recientes</h2>
+                    <table class="grades-table">
+                        <thead>
+                            <tr>
+                                <th>Materia</th>
+                                <th>Tarea/Examen</th>
+                                <th>Calificación</th>
+                                <th>Fecha</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Programación Web</td>
+                                <td>Proyecto Final</td>
+                                <td class="grade-value">9.5</td>
+                                <td>12/10/2023</td>
+                            </tr>
+                            <tr>
+                                <td>Base de Datos</td>
+                                <td>Examen Parcial</td>
+                                <td class="grade-value">8.8</td>
+                                <td>10/10/2023</td>
+                            </tr>
+                            <tr>
+                                <td>Matemáticas Discretas</td>
+                                <td>Tarea Unidad 3</td>
+                                <td class="grade-value">9.2</td>
+                                <td>08/10/2023</td>
+                            </tr>
+                            <tr>
+                                <td>Algoritmos</td>
+                                <td>Proyecto de Investigación</td>
+                                <td class="grade-value">9.0</td>
+                                <td>05/10/2023</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+
+        <!-- Pie de página -->
+        <footer>
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>Instituto Superior Tecnológico Villa Maria</h3>
+                        <p>Formando profesionales de excelencia. Comprometidos con la educación de calidad y el desarrollo integral de nuestros estudiantes.</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Contacto</h3>
+                        <p>📍 Av. Universidad #123, Villa Maria</p>
+                        <p>📞 +1 (555) 123-4567</p>
+                        <p>📧 info@istvm.edu</p>
+                    </div>
+                    <div class="footer-section">
+                        <h3>Enlaces Rápidos</h3>
+                        <a href="index.html">Portal Estudiantil</a>
+                        <a href="../Pagina_Perfil/perfil.html">Perfil Estudiantil</a>
+                        <a href="../Pagina_Tareas/tareas.html">Tareas Académicas</a>
+                        <a href="academico.html">Calificaciones</a>
+                        <a href="contacto.html">Contacto</a>
+                    </div>
+                </div>
+                <div class="copyright">
+                    <p>&copy; 2023 Instituto Superior Tecnológico Villa Maria. Todos los derechos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script>
+        // Datos del estudiante (en una implementación real, esto vendría de una API)
+        const studentData = {
+            semester: "4°",
+            average: "9.2",
+            approvedSubjects: "24/48",
+            pendingAssignments: "3"
+        };
+
+        // Actualizar la información del estudiante
+        document.addEventListener('DOMContentLoaded', function() {
+            // Actualizar los valores en la página
+            const infoCards = document.querySelectorAll('.info-card');
+            if (infoCards.length >= 4) {
+                infoCards[0].querySelector('.info-number').textContent = studentData.semester;
+                infoCards[1].querySelector('.info-number').textContent = studentData.average;
+                infoCards[2].querySelector('.info-number').textContent = studentData.approvedSubjects;
+                infoCards[3].querySelector('.info-number').textContent = studentData.pendingAssignments;
+            }
+            
+            console.log('Portal Estudiantil cargado correctamente');
+        });
+    </script>
+</body>
+</html>

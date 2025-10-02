@@ -1,0 +1,248 @@
+        /* Banner Principal */
+        .hero {
+            background: linear-gradient(rgba(26, 60, 110, 0.8), rgba(26, 60, 110, 0.9)), url('https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 30px;
+        }
+        
+        .btn {
+            display: inline-block;
+            background-color: #ffcc00;
+            color: #1a3c6e;
+            padding: 12px 25px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .btn:hover {
+            background-color: #e6b800;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            display: inline-block;
+            background-color: transparent;
+            color: #1a3c6e;
+            padding: 8px 15px;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            border: 2px solid #1a3c6e;
+            margin-top: 10px;
+            transition: all 0.3s;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #1a3c6e;
+            color: white;
+        }
+        
+        /* Sección de Servicios */
+        .services {
+            padding: 60px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #1a3c6e;
+        }
+        
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+        
+        .service-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .service-icon {
+            font-size: 40px;
+            margin-bottom: 20px;
+            color: #1a3c6e;
+        }
+        
+        .service-card h3 {
+            margin-bottom: 15px;
+            color: #1a3c6e;
+        }
+        
+        /* Noticias y Eventos */
+        .news-events {
+            background-color: #f0f4f8;
+            padding: 60px 0;
+        }
+        
+        .news-container {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 30px;
+        }
+        
+        .news-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            margin-bottom: 20px;
+        }
+        
+        .news-content {
+            padding: 20px;
+        }
+        
+        .news-date {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 10px;
+        }
+        
+        .news-card h3 {
+            margin-bottom: 10px;
+            color: #1a3c6e;
+        }
+        
+        .events-list {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        
+        .event-item {
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .event-item:last-child {
+            border-bottom: none;
+        }
+        
+        .event-date {
+            font-weight: bold;
+            color: #1a3c6e;
+            margin-bottom: 5px;
+        }
+        
+        .event-item h4 {
+            margin-bottom: 5px;
+            color: #333;
+        }
+        
+        /* Acceso Rápido */
+        .quick-access {
+            padding: 60px 0;
+        }
+        
+        .access-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 20px;
+        }
+        
+        .access-item {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: all 0.3s;
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        
+        .access-item:hover {
+            background-color: #1a3c6e;
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .access-item:hover h3 {
+            color: white;
+        }
+        
+        .access-icon {
+            font-size: 30px;
+            margin-bottom: 15px;
+            color: #1a3c6e;
+        }
+        
+        .access-item:hover .access-icon {
+            color: #ffcc00;
+        }
+        
+        /* Estadísticas */
+        .stats {
+            background-color: #1a3c6e;
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .stats .section-title {
+            color: white;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+        }
+        
+        .stat-item {
+            padding: 20px;
+        }
+        
+        .stat-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #ffcc00;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive */
+        @media (max-width: 768px) {
+            .news-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+        }
