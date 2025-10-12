@@ -4,6 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="credencial.css">
     <title>Portal Estudiantil - Instituto Superior Tecnológico Villa Maria</title>
     <style>
         * {
@@ -43,7 +44,7 @@
         header {
             background-color: #1a3c6e;
             color: white;
-            padding: 20px 0;
+            padding: 10px 0;
             box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             width: 100%;
         }
@@ -60,8 +61,8 @@
         }
 
         .logo-img {
-            width: 80px;
-            height: 80px;
+            width: 60px;
+            height: 60px;
             background-color: #fff;
             border-radius: 50%;
             display: flex;
@@ -111,13 +112,15 @@
 
         /* Banner Principal */
         .hero {
-            background: linear-gradient(rgba(26, 60, 110, 0.8), rgba(26, 60, 110, 0.9));
+            background-image: url('image/IESTPVILLAMARIA.png');
+            background-repeat: no-repeat;
+            background-position: center center;
             background-size: cover;
-            background-position: center;
             color: white;
             padding: 100px 0;
             text-align: center;
             width: 100%;
+
         }
 
         .hero-content {
@@ -463,15 +466,17 @@
 
         <!-- Banner Principal -->
         <section class="hero">
-            <div class="hero-content">
+            <div class="hero-content"
+                style="background: rgba(0, 0, 0, 0); padding: 40px; border-radius: 10px; display: inline-block;">
                 <h1>Bienvenido al Portal Estudiantil</h1>
-                <p>Gestiona tu formación académica, entega tareas y mantente informado sobre tu progreso educativo</p>
+                <p>Gestiona tu formación académica, entrega tareas y mantente informado sobre tu progreso educativo.</p>
                 <div>
-                    <a href="../Pagina_Perfil/perfil.html" class="btn">Ver Mi Perfil</a>
-                    <a href="../Pagina_Tareas/tareas.html" class="btn btn-secondary">Entregar Tareas</a>
+                    <a href="Pagina_Perfil/perfil.html" class="btn">Ver Mi Perfil</a>
+                    <a href="Pagina_Tareas_Academicas/index.html" class="btn btn-secondary">Entregar Tareas</a>
                 </div>
             </div>
         </section>
+
 
         <!-- Contenido Principal -->
         <div class="main-content">
@@ -500,7 +505,7 @@
                             <div class="service-icon">📊</div>
                             <h3>Calificaciones</h3>
                             <p>Revisa tus calificaciones, promedios y progreso académico en todas las materias.</p>
-                            <a href="academico.html" class="btn"
+                            <a href="#" class="btn"
                                 style="margin-top: 15px; padding: 10px 20px; font-size: 0.9rem;">Consultar</a>
                         </div>
                     </div>
@@ -613,11 +618,11 @@
                     </div>
                     <div class="footer-section">
                         <h3>Enlaces Rápidos</h3>
-                        <a href="index.html">Portal Estudiantil</a>
-                        <a href="../Pagina_Perfil/perfil.html">Perfil Estudiantil</a>
-                        <a href="../Pagina_Tareas/tareas.html">Tareas Académicas</a>
-                        <a href="academico.html">Calificaciones</a>
-                        <a href="contacto.html">Contacto</a>
+                        <a href="credencial.html">Portal Estudiantil</a>
+                        <a href="Pagina_Perfil/perfil.html">Perfil Estudiantil</a>
+                        <a href="Pagina_Tareas_Academicas/index.html">Tareas Académicas</a>
+                        <a href="Pagina_Tareas_Academicas/index.html">Calificaciones</a>
+                        <a href="#">Contacto</a>
                     </div>
                 </div>
                 <div class="copyright">
