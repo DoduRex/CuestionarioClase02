@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -8,37 +9,36 @@
     <link rel="stylesheet" href="index.css">
     <title>Entrega de Tareas - Instituto Tecnológico</title>
     <style>
-
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 text-align: center;
             }
-            
+
             nav ul {
                 margin-top: 15px;
                 justify-content: center;
             }
-            
+
             .task-header {
                 flex-direction: column;
                 gap: 10px;
             }
-            
+
             .task-meta {
                 flex-direction: column;
                 gap: 5px;
             }
-            
+
             .task-preview {
                 height: 300px;
             }
-            
+
             .footer-content {
                 flex-direction: column;
             }
-            
+
             .footer-section {
                 margin-right: 0;
                 margin-bottom: 20px;
@@ -46,6 +46,7 @@
         }
     </style>
 </head>
+
 <body>
     <!-- Encabezado -->
     <header>
@@ -77,9 +78,10 @@
                 <form id="assignmentForm">
                     <div class="form-group">
                         <label for="assignmentName">Nombre de la Tarea</label>
-                        <input type="text" id="assignmentName" class="form-control" placeholder="Ej: Proyecto Final - Página Web" required>
+                        <input type="text" id="assignmentName" class="form-control"
+                            placeholder="Ej: Proyecto Final - Página Web" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="assignmentCourse">Materia</label>
                         <select id="assignmentCourse" class="form-control" required>
@@ -90,21 +92,23 @@
                             <option value="algoritmos">Algoritmos y Estructuras</option>
                         </select>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="assignmentLink">URL de la Tarea</label>
-                        <input type="url" id="assignmentLink" class="form-control" placeholder="https://misitio.com/mi-tarea" required>
+                        <input type="url" id="assignmentLink" class="form-control"
+                            placeholder="https://misitio.com/mi-tarea" required>
                     </div>
-                    
+
                     <div class="form-group">
                         <label for="assignmentDescription">Descripción (opcional)</label>
-                        <textarea id="assignmentDescription" class="form-control" placeholder="Describe brevemente tu tarea..."></textarea>
+                        <textarea id="assignmentDescription" class="form-control"
+                            placeholder="Describe brevemente tu tarea..."></textarea>
                     </div>
-                    
+
                     <button type="submit" class="btn btn-primary">Entregar Tarea</button>
                 </form>
             </div>
-            
+
             <!-- Tareas Entregadas -->
             <div class="section">
                 <h2>Tareas Entregadas</h2>
@@ -181,37 +185,83 @@
                 date: "2023-10-10",
                 status: "graded"
             },
+
             {
                 id: 5,
+                name: "Cuestionario Clase 05",
+                course: "Programación Web",
+                link: "https://dodurex.github.io/CuestionarioClase01/formulario05.html",
+                description: "Modelado e implementación de base de datos para sistema de biblioteca",
+                date: "2023-10-30",
+                status: "graded"
+            },
+                        {
+                id: 6,
+                name: "Cuestionario Clase 06",
+                course: "Programación Web",
+                link: "https://dodurex.github.io/CuestionarioClase01/formulario06.html",
+                description: "Modelado e implementación de base de datos para sistema de biblioteca",
+                date: "2023-10-30",
+                status: "graded"
+            },
+                        {
+                id: 7,
+                name: "Cuestionario Clase 07",
+                course: "Programación Web",
+                link: "https://dodurex.github.io/CuestionarioClase01/formulario07.html",
+                description: "Modelado e implementación de base de datos para sistema de biblioteca",
+                date: "2023-10-30",
+                status: "graded"
+            },
+                        {
+                id: 8,
+                name: "Cuestionario Clase 08",
+                course: "Programación Web",
+                link: "https://dodurex.github.io/CuestionarioClase01/formulario08.html",
+                description: "Modelado e implementación de base de datos para sistema de biblioteca",
+                date: "2023-10-30",
+                status: "graded"
+            },
+                        {
+                id: 9,
+                name: "Cuestionario Clase 09",
+                course: "Programación Web",
+                link: "https://dodurex.github.io/CuestionarioClase01/formulario09.html",
+                description: "Modelado e implementación de base de datos para sistema de biblioteca",
+                date: "2023-10-30",
+                status: "graded"
+            },
+            {
+                id: 10,
                 name: "Proyecto de Base de Datos",
                 course: "Base de Datos",
                 link: "https://ejemplo.com/proyecto-bd",
                 description: "Modelado e implementación de base de datos para sistema de biblioteca",
                 date: "2023-10-05",
                 status: "graded"
-            }
+            },
         ];
-        
+
         // Elementos del DOM
         const assignmentForm = document.getElementById('assignmentForm');
         const tasksList = document.getElementById('tasksList');
-        
+
         // Cargar tareas
         function loadTasks() {
             tasksList.innerHTML = '';
-            
+
             if (tasks.length === 0) {
                 tasksList.innerHTML = '<li class="task-item" style="text-align: center; color: #888;">No hay tareas entregadas aún</li>';
                 return;
             }
-            
+
             tasks.forEach(task => {
                 const taskItem = document.createElement('li');
                 taskItem.className = 'task-item';
-                
+
                 const statusClass = task.status === 'graded' ? 'status-graded' : 'status-pending';
                 const statusText = task.status === 'graded' ? 'Calificado' : 'Pendiente';
-                
+
                 taskItem.innerHTML = `
                     <div class="task-header">
                         <div class="task-title">${task.name}</div>
@@ -234,48 +284,48 @@
                         <iframe class="preview-frame" src="${task.link}"></iframe>
                     </div>
                 `;
-                
+
                 tasksList.appendChild(taskItem);
             });
-            
+
             // Agregar event listeners a los botones
             document.querySelectorAll('.refresh-preview-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     const taskId = this.getAttribute('data-task-id');
                     refreshPreview(taskId);
                 });
             });
-            
+
             document.querySelectorAll('.open-task-btn').forEach(btn => {
-                btn.addEventListener('click', function() {
+                btn.addEventListener('click', function () {
                     const taskLink = this.getAttribute('data-task-link');
                     window.open(taskLink, '_blank');
                 });
             });
         }
-        
+
         // Actualizar vista previa
         function refreshPreview(taskId) {
             const taskItem = document.querySelector(`[data-task-id="${taskId}"]`).closest('.task-item');
             const iframe = taskItem.querySelector('.preview-frame');
             iframe.src = iframe.src; // Recargar el iframe
         }
-        
+
         // Formatear fecha
         function formatDate(dateString) {
             const options = { year: 'numeric', month: 'long', day: 'numeric' };
             return new Date(dateString).toLocaleDateString('es-ES', options);
         }
-        
+
         // Manejar envío del formulario
-        assignmentForm.addEventListener('submit', function(e) {
+        assignmentForm.addEventListener('submit', function (e) {
             e.preventDefault();
-            
+
             const taskName = document.getElementById('assignmentName').value;
             const taskCourse = document.getElementById('assignmentCourse').value;
             const taskLink = document.getElementById('assignmentLink').value;
             const taskDescription = document.getElementById('assignmentDescription').value;
-            
+
             // Crear nueva tarea
             const newTask = {
                 id: tasks.length + 1,
@@ -286,24 +336,25 @@
                 date: new Date().toISOString().split('T')[0],
                 status: 'pending'
             };
-            
+
             // Agregar a la lista
             tasks.unshift(newTask);
-            
+
             // Actualizar la lista de tareas
             loadTasks();
-            
+
             // Mostrar mensaje de éxito
             alert('¡Tarea entregada correctamente!');
-            
+
             // Limpiar formulario
             assignmentForm.reset();
         });
-        
+
         // Inicializar la página
-        document.addEventListener('DOMContentLoaded', function() {
+        document.addEventListener('DOMContentLoaded', function () {
             loadTasks();
         });
     </script>
 </body>
+
 </html>
